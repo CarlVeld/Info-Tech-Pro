@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Teacher Dashboard — Info Tech Pro</title>
+
+   
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+
+   
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="teacher-styles.css">
+
+  
+  <meta name="theme-color" content="#0d1117">
+</head>
+<body class="app">
+
+ 
+  <nav class="nav-wrap">
+    <div class="brand">
+      <img class="school-logo" src="LOGO NO BG.png" alt="Logo">
+      <a class="logo">Info Tech <span class="accent">Pro</span></a>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="btn secondary" onclick="window.location.href='index.html'">
+        <i class="fa-solid fa-home"></i> Back to Home
+      </button>
+      <button class="btn secondary" onclick="openTeacherProfile()">
+        <i class="fa-solid fa-user"></i> Profile
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    
+    <section class="welcome-section">
+      <div class="container">
+        <div class="welcome-content">
+          <h1 class="welcome-title">Welcome, <span class="accent">Teacher</span>!</h1>
+          <p class="welcome-subtitle">Manage your students and track their progress</p>
+        </div>
+       
+        <div class="progress-overview">
+          <div class="progress-card">
+            <div class="progress-icon">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="progress-info">
+              <h3>24</h3>
+              <p>Total Students</p>
+            </div>
+          </div>
+          <div class="progress-card">
+            <div class="progress-icon">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="progress-info">
+              <h3>6</h3>
+              <p>Active Lessons</p>
+            </div>
+          </div>
+          <div class="progress-card">
+            <div class="progress-icon">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <div class="progress-info">
+              <h3>78%</h3>
+              <p>Avg. Completion</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lessons-section">
+      <div class="container">
+        <h2 class="section-title">Course <span class="accent">Management</span></h2>
+        <p class="section-subtitle">Monitor and manage your ICT courses</p>
+
+        <div class="lessons-grid"> 
+          <div class="lesson-card" data-status="active">
+            <div class="lesson-header">
+              <div class="lesson-icon html-icon">
+                <i class="fa-brands fa-html5"></i>
+              </div>
+              <span class="lesson-status active">
+                <i class="fa-solid fa-circle"></i> Active
+              </span>
+            </div>
+            <h3 class="lesson-title">HTML Fundamentals</h3>
+            <p class="lesson-description">18 students enrolled • 12 completed</p>
+            <div class="lesson-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 67%"></div>
+              </div>
+              <span class="progress-text">67% Completion</span>
+            </div>
+            <div class="lesson-footer">
+              <span class="lesson-duration">
+                <i class="fa-solid fa-users"></i> 18 Students
+              </span>
+              <button class="btn-lesson secondary" onclick="viewCourseDetails('html')">
+                View Details <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+
+          <div class="lesson-card" data-status="active">
+            <div class="lesson-header">
+              <div class="lesson-icon css-icon">
+                <i class="fa-brands fa-css3-alt"></i>
+              </div>
+              <span class="lesson-status active">
+                <i class="fa-solid fa-circle"></i> Active
+              </span>
+            </div>
+            <h3 class="lesson-title">CSS Styling</h3>
+            <p class="lesson-description">20 students enrolled • 15 completed</p>
+            <div class="lesson-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 75%"></div>
+              </div>
+              <span class="progress-text">75% Completion</span>
+            </div>
+            <div class="lesson-footer">
+              <span class="lesson-duration">
+                <i class="fa-solid fa-users"></i> 20 Students
+              </span>
+              <button class="btn-lesson secondary" onclick="viewCourseDetails('css')">
+                View Details <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+ 
+          <div class="lesson-card" data-status="active">
+            <div class="lesson-header">
+              <div class="lesson-icon js-icon">
+                <i class="fa-brands fa-js-square"></i>
+              </div>
+              <span class="lesson-status active">
+                <i class="fa-solid fa-circle"></i> Active
+              </span>
+            </div>
+            <h3 class="lesson-title">JavaScript Programming</h3>
+            <p class="lesson-description">22 students enrolled • 10 completed</p>
+            <div class="lesson-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 45%"></div>
+              </div>
+              <span class="progress-text">45% Completion</span>
+            </div>
+            <div class="lesson-footer">
+              <span class="lesson-duration">
+                <i class="fa-solid fa-users"></i> 22 Students
+              </span>
+              <button class="btn-lesson secondary" onclick="viewCourseDetails('javascript')">
+                View Details <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+      
+          <div class="lesson-card" data-status="active">
+            <div class="lesson-header">
+              <div class="lesson-icon php-icon">
+                <i class="fa-brands fa-php"></i>
+              </div>
+              <span class="lesson-status active">
+                <i class="fa-solid fa-circle"></i> Active
+              </span>
+            </div>
+            <h3 class="lesson-title">PHP Backend Development</h3>
+            <p class="lesson-description">16 students enrolled • 8 completed</p>
+            <div class="lesson-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 50%"></div>
+              </div>
+              <span class="progress-text">50% Completion</span>
+            </div>
+            <div class="lesson-footer">
+              <span class="lesson-duration">
+                <i class="fa-solid fa-users"></i> 16 Students
+              </span>
+              <button class="btn-lesson secondary" onclick="viewCourseDetails('php')">
+                View Details <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+    
+          <div class="lesson-card" data-status="active">
+            <div class="lesson-header">
+              <div class="lesson-icon mysql-icon">
+                <i class="fa-solid fa-database"></i>
+              </div>
+              <span class="lesson-status active">
+                <i class="fa-solid fa-circle"></i> Active
+              </span>
+            </div>
+            <h3 class="lesson-title">MySQL Database</h3>
+            <p class="lesson-description">19 students enrolled • 11 completed</p>
+            <div class="lesson-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 58%"></div>
+              </div>
+              <span class="progress-text">58% Completion</span>
+            </div>
+            <div class="lesson-footer">
+              <span class="lesson-duration">
+                <i class="fa-solid fa-users"></i> 19 Students
+              </span>
+              <button class="btn-lesson secondary" onclick="viewCourseDetails('mysql')">
+                View Details <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="lesson-card" data-status="active">
+            <div class="lesson-header">
+              <div class="lesson-icon security-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <span class="lesson-status active">
+                <i class="fa-solid fa-circle"></i> Active
+              </span>
+            </div>
+            <h3 class="lesson-title">Cyber Security</h3>
+            <p class="lesson-description">14 students enrolled • 7 completed</p>
+            <div class="lesson-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 50%"></div>
+              </div>
+              <span class="progress-text">50% Completion</span>
+            </div>
+            <div class="lesson-footer">
+              <span class="lesson-duration">
+                <i class="fa-solid fa-users"></i> 14 Students
+              </span>
+              <button class="btn-lesson secondary" onclick="viewCourseDetails('security')">
+                View Details <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+    <section class="quick-actions-section">
+      <div class="container">
+        <h2 class="section-title">Quick <span class="accent">Actions</span></h2>
+        <p class="section-subtitle">Manage your teaching dashboard</p>
+        <div class="quick-actions-grid">
+          <button class="action-card-btn" id="studentsBtn">
+            <div class="action-icon">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <h3>Students</h3>
+            <p>View all students</p>
+            <span class="action-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+          
+          <button class="action-card-btn" id="analyticsBtn">
+            <div class="action-icon">
+              <i class="fa-solid fa-chart-bar"></i>
+            </div>
+            <h3>Analytics</h3>
+            <p>Track performance</p>
+            <span class="action-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+          
+          <button class="action-card-btn" id="assignmentsBtn">
+            <div class="action-icon">
+              <i class="fa-solid fa-file-alt"></i>
+            </div>
+            <h3>Assignments</h3>
+            <p>Manage tasks</p>
+            <span class="action-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+          
+          <button class="action-card-btn" id="teacherCertificatesBtn">
+            <div class="action-icon">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <h3>Certificates</h3>
+            <p>Issue certificates</p>
+            <span class="action-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>&copy; <span id="year"></span> Info Tech Pro</small>
+    </div>
+  </footer>
+
+  <script src="teacher-script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('studentsBtn').onclick = viewStudents;
+    document.getElementById('analyticsBtn').onclick = viewAnalytics;
+    document.getElementById('assignmentsBtn').onclick = viewAssignments;
+    document.getElementById('teacherCertificatesBtn').onclick = viewCertificates;
+  </script>
+</body>
+</html>

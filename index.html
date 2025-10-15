@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Info Tech Pro — ICT & IT Learning</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#0d1117">
+</head>
+<body class="app">
+
+  <!-- HEADER -->
+  <nav class="nav-wrap">
+    <div class="brand">
+      <img class="school-logo" src="LOGO NO BG.png" alt="Logo">
+      <a class="logo">Info Tech <span class="accent">Pro</span></a>
+    </div>
+
+    <div class="nav-buttons">
+      <!-- Added onclick handlers for Login and Signup buttons -->
+      <button class="btn primary" onclick="showLoginModal()">Login</button>
+      <button class="btn secondary" onclick="showSignupModal()">Signup</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-inner">
+        <h1 class="title">Teknolohiyang Maasahan Propesyonal na Kaalaman</h1>
+        <p class="subtitle">
+          Info Tech Pro — an interactive, curriculum-aligned ICT learning platform built for students and DepEd teachers. Access lessons, projects, and chat features designed for hands-on learning.
+        </p>
+
+        <div class="hero-cta">
+          <button class="btn primary" onclick="showLogin('student')">
+            <i class="fa-solid fa-user-graduate"></i> Student Access
+          </button>
+          <button class="btn secondary" onclick="showLogin('teacher')">
+            <i class="fa-solid fa-chalkboard-user"></i> DepEd Teacher
+          </button>
+        </div>
+
+        <div class="hero-features">
+          <div class="feat" title="HTML"><i class="fa-brands fa-html5"></i><span>HTML</span></div>
+          <div class="feat" title="CSS"><i class="fa-brands fa-css3-alt"></i><span>CSS</span></div>
+          <div class="feat" title="PHP"><i class="fa-brands fa-php"></i><span>PHP</span></div>
+          <div class="feat" title="JavaScript"><i class="fa-brands fa-js-square"></i><span>JavaScript</span></div>
+          <div class="feat" title="MySQL"><i class="fa-solid fa-database"></i><span>MySQL</span></div>
+          <div class="feat" title="C++"><i class="fa-solid fa-code"></i><span>C++</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- LOGIN MODAL -->
+  <div id="loginModal" class="modal" aria-hidden="true">
+    <div class="modal-panel login-panel">
+      <button class="modal-close" onclick="closeModal('loginModal')"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-head">
+        <h3 id="loginTitle">Login</h3>
+        <p class="muted">Use demo credentials for quick preview.</p>
+      </div>
+      <form id="loginForm" class="form" autocomplete="on" onsubmit="handleLogin(event)">
+        <label for="email" class="muted">Email</label>
+        <input id="email" type="email" name="email" placeholder="student@quirinohs.ph" required>
+
+        <label for="password" class="muted">Password</label>
+        <input id="password" type="password" name="password" placeholder="Password" required>
+
+        <div class="form-row">
+          <button type="submit" class="btn primary">
+            <i class="fa-solid fa-right-to-bracket"></i> Login
+          </button>
+          <button type="button" class="btn ghost" onclick="fillDemo()">Use Demo</button>
+        </div>
+
+        <p id="loginError" class="error" aria-live="polite"></p>
+      </form>
+
+      <div class="modal-foot">
+        <small class="muted">Student demo: <strong>student@quirinohs.ph</strong> / <strong>ICTPROG</strong></small><br>
+        <small class="muted">Teacher demo: <strong>teacher@deped.gov.ph</strong> / <strong>AdministrationICT2025</strong></small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Added Signup Modal -->
+  <div id="signupModal" class="modal" aria-hidden="true">
+    <div class="modal-panel login-panel">
+      <button class="modal-close" onclick="closeModal('signupModal')"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-head">
+        <h3>Create Account</h3>
+        <p class="muted">Sign up to start your learning journey.</p>
+      </div>
+      <form id="signupForm" class="form" autocomplete="on" onsubmit="handleSignup(event)">
+        <label for="signup-name" class="muted">Full Name</label>
+        <input id="signup-name" type="text" name="name" placeholder="Juan Dela Cruz" required>
+
+        <label for="signup-email" class="muted">Email</label>
+        <input id="signup-email" type="email" name="email" placeholder="student@quirinohs.ph" required>
+
+        <label for="signup-password" class="muted">Password</label>
+        <input id="signup-password" type="password" name="password" placeholder="Create a password" required minlength="6">
+
+        <label for="signup-confirm" class="muted">Confirm Password</label>
+        <input id="signup-confirm" type="password" name="confirm" placeholder="Confirm password" required minlength="6">
+
+        <label for="signup-role" class="muted">I am a</label>
+        <select id="signup-role" name="role" required style="width: 100%; padding: 0.6rem 0.8rem; margin-top: 0.3rem; border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); color: var(--text); font-size: 0.95rem;">
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+        </select>
+
+        <div class="form-row">
+          <button type="submit" class="btn primary">
+            <i class="fa-solid fa-user-plus"></i> Sign Up
+          </button>
+        </div>
+
+        <p id="signupError" class="error" aria-live="polite"></p>
+      </form>
+
+      <div class="modal-foot">
+        <small class="muted">Already have an account? <a href="#" onclick="switchToLogin(event)" style="color: var(--cyan); text-decoration: underline;">Login here</a></small>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROFESSIONAL TUTORS SECTION -->
+  <section id="tutors" class="tutors">
+    <div class="container" style="text-align:center;">
+      <h2 class="title">Meet Our Tutors</h2>
+      <p class="subtitle" style="max-width:700px; margin:0.5rem auto 2rem auto;">
+        Our tutors are experienced ICT professionals ready to guide students in web development, coding, and databases. Learn hands-on with guidance from industry-level experts.
+      </p>
+
+      <div class="tutors-grid">
+        <div class="tutor-card">
+          <div class="tutor-img"><img src="1.jpg" alt="Carl Nathan C Palacios"></div>
+          <h4>Carl Nathan C Palacios</h4>
+          <span class="role-badge">Intermediate – 3 yrs</span>
+          <p class="muted">Expert in HTML, CSS, and JavaScript</p>
+          <div class="tutor-skills">
+            <div class="skill" title="HTML"><i class="fa-brands fa-html5"></i></div>
+            <div class="skill" title="CSS"><i class="fa-brands fa-css3-alt"></i></div>
+            <div class="skill" title="JavaScript"><i class="fa-brands fa-js-square"></i></div>
+          </div>
+        </div>
+        <div class="tutor-card">
+          <div class="tutor-img"><img src="2.jpg" alt="Deimer Solar"></div>
+          <h4>Deimer Solar</h4>
+          <span class="role-badge">Intermediate – 3 yrs</span>
+          <p class="muted">Backend specialist in PHP & MySQL</p>
+          <div class="tutor-skills">
+            <div class="skill" title="PHP"><i class="fa-brands fa-php"></i></div>
+            <div class="skill" title="MySQL"><i class="fa-solid fa-database"></i></div>
+          </div>
+        </div>
+        <div class="tutor-card">
+          <div class="tutor-img"><img src="3.png" alt="Aljur Cimeni"></div>
+          <h4>Aljur Cimeni</h4>
+          <span class="role-badge">Junior – 2 yrs</span>
+          <p class="muted">C++ & algorithm-focused software engineer</p>
+          <div class="tutor-skills">
+            <div class="skill" title="C++"><i class="fa-solid fa-code"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>&copy; <span id="year"></span> Info Tech Pro — free for ICT students. Aligned with DepEd curriculum.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

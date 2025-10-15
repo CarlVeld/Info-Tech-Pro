@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Dashboard — Info Tech Pro</title>
+
+   Fonts & Icons 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+
+   Styles 
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="student-style.css">
+
+   Theme color 
+  <meta name="theme-color" content="#0d1117">
+</head>
+<body class="app">
+
+   HEADER 
+  <nav class="nav-wrap">
+    <div class="brand">
+      <img class="school-logo" src="LOGO NO BG.png" alt="Logo">
+      <a class="logo">Info Tech <span class="accent">Pro</span></a>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="btn secondary" onclick="window.location.href='index.html'">
+        <i class="fa-solid fa-home"></i> Back to Home
+      </button>
+      <button class="btn secondary" onclick="openProfile()">
+        <i class="fa-solid fa-user"></i> Profile
+      </button>
+    </div>
+  </nav>
+
+ 
+  <main>
+  
+    <section class="welcome-section">
+      <div class="container">
+        <div class="welcome-content">
+          <h1 class="welcome-title">Welcome back, <span class="accent">Student</span>!</h1>
+          <p class="welcome-subtitle">Continue your ICT learning journey. Pick up where you left off.</p>
+        </div>
+        
+      
+        <div class="progress-overview">
+          <div class="progress-card">
+            <div class="progress-icon">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="progress-info">
+              <h3>0/12</h3>
+              <p>Lessons Completed</p>
+            </div>
+          </div>
+          <div class="progress-card">
+            <div class="progress-icon">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <div class="progress-info">
+              <h3>0%</h3>
+              <p>Overall Progress</p>
+            </div>
+          </div>
+          <div class="progress-card">
+            <div class="progress-icon">
+              <i class="fa-solid fa-fire"></i>
+            </div>
+            <div class="progress-info">
+              <h3>0</h3>
+              <p>Day Streak</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+    <section class="lessons-section">
+      <div class="container">
+        <h2 class="section-title">Your <span class="accent">Lessons</span></h2>
+        <p class="section-subtitle">Master the fundamentals of web development and programming</p>
+
+        <div class="lessons-grid">
+           
+          <div class="lesson-card" data-status="not-started">
+            <div class="lesson-header">
+              <div class="lesson-icon html-icon">
+                <i class="fa-brands fa-html5"></i>
+              </div>
+              <span class="lesson-status not-started">
+                <i class="fa-solid fa-circle"></i> Not Started
+              </span>
+            </div>
+            <h3 class="lesson-title">HTML Fundamentals</h3>
+            <p class="lesson-description">Master HTML5 semantic elements, forms, tables, and document structure. Learn to create accessible web pages with proper markup and SEO-friendly content organization.</p>
+            <div class="lesson-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+              </div>
+              <span class="progress-text">0%</span>
+            </div>
+            <div class="lesson-footer">
+              <span class="lesson-duration">
+                <i class="fa-solid fa-clock"></i> 2h 30m
+              </span>
+              <button class="btn-lesson secondary" onclick="openLesson('html')">
+                Start Learning <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+         
+          <div class="lesson-card" data-status="not-started">
+            <div class="lesson-header">
+              <div class="lesson-icon css-icon">
+                <i class="fa-brands fa-css3-alt"></i>
+              </div>
+              <span class="lesson-status not-started">
+                <i class="fa-solid fa-circle"></i> Not Started
+              </span>
+            </div>
+            <h3 class="lesson-title">CSS Styling</h3>
+            <p class="lesson-description">Learn CSS3 styling techniques including Flexbox, Grid layouts, animations, transitions, and responsive design. Create beautiful, mobile-friendly interfaces with modern CSS.</p>
+            <div class="lesson-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+              </div>
+              <span class="progress-text">0%</span>
+            </div>
+            <div class="lesson-footer">
+              <span class="lesson-duration">
+                <i class="fa-solid fa-clock"></i> 3h 15m
+              </span>
+              <button class="btn-lesson secondary" onclick="openLesson('css')">
+                Start Learning <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="lesson-card" data-status="not-started">
+            <div class="lesson-header">
+              <div class="lesson-icon js-icon">
+                <i class="fa-brands fa-js-square"></i>
+              </div>
+              <span class="lesson-status not-started">
+                <i class="fa-solid fa-circle"></i> Not Started
+              </span>
+            </div>
+            <h3 class="lesson-title">JavaScript Programming</h3>
+            <p class="lesson-description">Master JavaScript fundamentals including variables, functions, DOM manipulation, events, ES6+ features, async programming, and modern JavaScript frameworks integration.</p>
+            <div class="lesson-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+              </div>
+              <span class="progress-text">0%</span>
+            </div>
+            <div class="lesson-footer">
+              <span class="lesson-duration">
+                <i class="fa-solid fa-clock"></i> 4h 00m
+              </span>
+              <button class="btn-lesson secondary" onclick="openLesson('javascript')">
+                Start Learning <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+         
+          <div class="lesson-card" data-status="not-started">
+            <div class="lesson-header">
+              <div class="lesson-icon php-icon">
+                <i class="fa-brands fa-php"></i>
+              </div>
+              <span class="lesson-status not-started">
+                <i class="fa-solid fa-circle"></i> Not Started
+              </span>
+            </div>
+            <h3 class="lesson-title">PHP Backend Development</h3>
+            <p class="lesson-description">Build dynamic server-side applications with PHP. Learn variables, functions, forms handling, sessions, cookies, file operations, and database connectivity with MySQL.</p>
+            <div class="lesson-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+              </div>
+              <span class="progress-text">0%</span>
+            </div>
+            <div class="lesson-footer">
+              <span class="lesson-duration">
+                <i class="fa-solid fa-clock"></i> 3h 45m
+              </span>
+              <button class="btn-lesson secondary" onclick="openLesson('php')">
+                Start Learning <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          
+          <div class="lesson-card" data-status="not-started">
+            <div class="lesson-header">
+              <div class="lesson-icon mysql-icon">
+                <i class="fa-solid fa-database"></i>
+              </div>
+              <span class="lesson-status not-started">
+                <i class="fa-solid fa-circle"></i> Not Started
+              </span>
+            </div>
+            <h3 class="lesson-title">MySQL Database</h3>
+            <p class="lesson-description">Master database management with MySQL. Learn SQL queries, table design, relationships, joins, indexes, data manipulation, and database optimization techniques.</p>
+            <div class="lesson-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+              </div>
+              <span class="progress-text">0%</span>
+            </div>
+            <div class="lesson-footer">
+              <span class="lesson-duration">
+                <i class="fa-solid fa-clock"></i> 3h 30m
+              </span>
+              <button class="btn-lesson secondary" onclick="openLesson('mysql')">
+                Start Learning <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+         
+          <div class="lesson-card" data-status="not-started">
+            <div class="lesson-header">
+              <div class="lesson-icon security-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <span class="lesson-status not-started">
+                <i class="fa-solid fa-circle"></i> Not Started
+              </span>
+            </div>
+            <h3 class="lesson-title">Cyber Security</h3>
+            <p class="lesson-description">Learn essential cybersecurity concepts including encryption, authentication, secure coding practices, common vulnerabilities, threat prevention, and data protection strategies.</p>
+            <div class="lesson-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+              </div>
+              <span class="progress-text">0%</span>
+            </div>
+            <div class="lesson-footer">
+              <span class="lesson-duration">
+                <i class="fa-solid fa-clock"></i> 4h 15m
+              </span>
+              <button class="btn-lesson secondary" onclick="openLesson('security')">
+                Start Learning <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+        
+          <div class="lesson-card" data-status="not-started">
+            <div class="lesson-header">
+              <div class="lesson-icon cpp-icon">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <span class="lesson-status not-started">
+                <i class="fa-solid fa-circle"></i> Not Started
+              </span>
+            </div>
+            <h3 class="lesson-title">C++ Programming</h3>
+            <p class="lesson-description">Master C++ fundamentals including variables, data types, control structures, functions, OOP concepts, pointers, memory management, and STL for efficient programming.</p>
+            <div class="lesson-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+              </div>
+              <span class="progress-text">0%</span>
+            </div>
+            <div class="lesson-footer">
+              <span class="lesson-duration">
+                <i class="fa-solid fa-clock"></i> 5h 00m
+              </span>
+              <button class="btn-lesson secondary" onclick="openLesson('cpp')">
+                Start Learning <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="lesson-card" data-status="not-started">
+            <div class="lesson-header">
+              <div class="lesson-icon python-icon">
+                <i class="fa-brands fa-python"></i>
+              </div>
+              <span class="lesson-status not-started">
+                <i class="fa-solid fa-circle"></i> Not Started
+              </span>
+            </div>
+            <h3 class="lesson-title">Python Programming</h3>
+            <p class="lesson-description">Learn Python from basics to advanced topics including data structures, functions, OOP, file handling, libraries like NumPy and Pandas, and web development with Django/Flask.</p>
+            <div class="lesson-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+              </div>
+              <span class="progress-text">0%</span>
+            </div>
+            <div class="lesson-footer">
+              <span class="lesson-duration">
+                <i class="fa-solid fa-clock"></i> 4h 30m
+              </span>
+              <button class="btn-lesson secondary" onclick="openLesson('python')">
+                Start Learning <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+         
+          <div class="lesson-card" data-status="not-started">
+            <div class="lesson-header">
+              <div class="lesson-icon frontend-icon">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+              <span class="lesson-status not-started">
+                <i class="fa-solid fa-circle"></i> Not Started
+              </span>
+            </div>
+            <h3 class="lesson-title">Frontend Development</h3>
+            <p class="lesson-description">Master modern frontend development with React, Vue, responsive design, state management, API integration, performance optimization, and building interactive user interfaces.</p>
+            <div class="lesson-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+              </div>
+              <span class="progress-text">0%</span>
+            </div>
+            <div class="lesson-footer">
+              <span class="lesson-duration">
+                <i class="fa-solid fa-clock"></i> 5h 30m
+              </span>
+              <button class="btn-lesson secondary" onclick="openLesson('frontend')">
+                Start Learning <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+     
+          <div class="lesson-card" data-status="not-started">
+            <div class="lesson-header">
+              <div class="lesson-icon backend-icon">
+                <i class="fa-solid fa-server"></i>
+              </div>
+              <span class="lesson-status not-started">
+                <i class="fa-solid fa-circle"></i> Not Started
+              </span>
+            </div>
+            <h3 class="lesson-title">Backend Development</h3>
+            <p class="lesson-description">Build robust server-side applications with Node.js, Express, RESTful APIs, authentication, database integration, security best practices, and deployment strategies.</p>
+            <div class="lesson-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+              </div>
+              <span class="progress-text">0%</span>
+            </div>
+            <div class="lesson-footer">
+              <span class="lesson-duration">
+                <i class="fa-solid fa-clock"></i> 5h 45m
+              </span>
+              <button class="btn-lesson secondary" onclick="openLesson('backend')">
+                Start Learning <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="lesson-card" data-status="not-started">
+            <div class="lesson-header">
+              <div class="lesson-icon canva-icon">
+                <i class="fa-solid fa-palette"></i>
+              </div>
+              <span class="lesson-status not-started">
+                <i class="fa-solid fa-circle"></i> Not Started
+              </span>
+            </div>
+            <h3 class="lesson-title">Canva Design</h3>
+            <p class="lesson-description">Create stunning graphics with Canva. Learn design principles, templates, branding, social media graphics, presentations, posters, and professional visual content creation.</p>
+            <div class="lesson-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+              </div>
+              <span class="progress-text">0%</span>
+            </div>
+            <div class="lesson-footer">
+              <span class="lesson-duration">
+                <i class="fa-solid fa-clock"></i> 3h 00m
+              </span>
+              <button class="btn-lesson secondary" onclick="openLesson('canva')">
+                Start Learning <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+        
+          <div class="lesson-card" data-status="not-started">
+            <div class="lesson-header">
+              <div class="lesson-icon photoshop-icon">
+                <i class="fa-solid fa-image"></i>
+              </div>
+              <span class="lesson-status not-started">
+                <i class="fa-solid fa-circle"></i> Not Started
+              </span>
+            </div>
+            <h3 class="lesson-title">Adobe Photoshop</h3>
+            <p class="lesson-description">Master photo editing and digital art with Photoshop. Learn layers, masks, filters, retouching, compositing, color correction, and professional image manipulation techniques.</p>
+            <div class="lesson-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 0%"></div>
+              </div>
+              <span class="progress-text">0%</span>
+            </div>
+            <div class="lesson-footer">
+              <span class="lesson-duration">
+                <i class="fa-solid fa-clock"></i> 4h 45m
+              </span>
+              <button class="btn-lesson secondary" onclick="openLesson('photoshop')">
+                Start Learning <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+    <section class="quick-actions-section">
+      <div class="container">
+        <h2 class="section-title">Quick <span class="accent">Actions</span></h2>
+        <p class="section-subtitle">Access your learning tools and resources</p>
+        <div class="quick-actions-grid">
+          <button class="action-card-btn" id="achievementsBtn" onclick="openAchievements()">
+            <div class="action-icon">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <h3>Achievements</h3>
+            <p>View your badges</p>
+            <span class="action-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+          
+          <button class="action-card-btn" id="chatBtn" onclick="openAIChat()">
+            <div class="action-icon">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <h3>AI Chat</h3>
+            <p>Get instant help</p>
+            <span class="action-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+          
+          <button class="action-card-btn" id="projectsBtn" onclick="openProjects()">
+            <div class="action-icon">
+              <i class="fa-solid fa-file-code"></i>
+            </div>
+            <h3>Projects</h3>
+            <p>Build real apps</p>
+            <span class="action-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+          
+          <button class="action-card-btn" id="certificatesBtn" onclick="openCertificates()">
+            <div class="action-icon">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <h3>Certificates</h3>
+            <p>Track progress</p>
+            <span class="action-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>&copy; <span id="year"></span> Info Tech Pro</small>
+    </div>
+  </footer>
+
+  <script src="student-script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

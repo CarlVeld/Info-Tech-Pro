@@ -1,0 +1,707 @@
+/* =====================================================
+   Info Tech Pro — Black Tech Theme (Refined)
+   Palette:
+     Dark: #0d1117
+     Surface: #16181b
+     Text: #e6edf3
+     Cyan: #00bcd4
+     Gold: #ffcc00
+   ===================================================== */
+
+/* ===================== Base ===================== */
+:root {
+  --bg: #0d1117;
+  --surface: #0f161a;
+  --panel: #11151a;
+  --muted: #9aa6b2;
+  --text: #e6edf3;
+  --cyan: #00bcd4;
+  --gold: #ffcc00;
+  --glass: rgba(255, 255, 255, 0.03);
+  --radius: 12px;
+  --container: 1100px;
+  --ease: cubic-bezier(0.16, 0.84, 0.44, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body.app {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(0, 188, 212, 0.04), transparent),
+    linear-gradient(180deg, var(--bg), #06070a 120%);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+  overflow-y: overlay;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* ===================== Navbar ===================== */
+.nav-wrap {
+  background: #0d1117;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between; /* logo left, buttons right */
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* space between logo and text */
+}
+
+.school-logo {
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+  display: block;
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #fff;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.logo .accent {
+  color: var(--cyan);
+}
+
+.logo:hover {
+  color: var(--cyan);
+}
+
+/* Navbar Buttons */
+.nav-buttons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.nav-buttons .btn.primary {
+  background: linear-gradient(90deg, rgba(0, 188, 212, 0.2), rgba(0, 188, 212, 0.06));
+  color: var(--text);
+  border: 1px solid rgba(0, 188, 212, 0.15);
+}
+
+.nav-buttons .btn.secondary {
+  background: linear-gradient(90deg, rgba(255, 204, 0, 0.15), rgba(255, 204, 0, 0.05));
+  color: var(--text);
+  border: 1px solid rgba(255, 204, 0, 0.1);
+}
+
+.nav-buttons .btn.primary:hover {
+  box-shadow: 0 0 12px rgba(0, 188, 212, 0.6), 0 0 24px rgba(0, 188, 212, 0.3);
+  transform: translateY(-2px);
+}
+
+.nav-buttons .btn.secondary:hover {
+  box-shadow: 0 0 12px rgba(255, 204, 0, 0.5), 0 0 24px rgba(0, 188, 212, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ===================== Hero Section ===================== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 1rem 4rem 1rem;
+  text-align: center;
+  background: radial-gradient(circle at top left, rgba(0, 188, 212, 0.05), transparent),
+    linear-gradient(180deg, var(--bg), #06070a 120%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 188, 212, 0.06), transparent 70%);
+  z-index: 0;
+  animation: pulse 15s infinite alternate;
+}
+
+.hero .title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 0 8px rgba(0, 188, 212, 0.5), 0 0 16px rgba(0, 188, 212, 0.2);
+}
+
+.hero .title .accent {
+  color: var(--cyan);
+}
+
+.hero .subtitle {
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero Call-to-Action Buttons */
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Shared button styles */
+.hero-cta .btn {
+  border-radius: var(--radius);
+  padding: 0.65rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+  border: 1px solid transparent;
+}
+
+/* Student button */
+.hero-cta .btn.primary {
+  background: linear-gradient(90deg, rgba(0, 188, 212, 0.2), rgba(0, 188, 212, 0.06));
+  color: var(--text);
+  border: 1px solid rgba(0, 188, 212, 0.15);
+}
+
+.hero-cta .btn.primary:hover {
+  box-shadow: 0 0 12px rgba(0, 188, 212, 0.6), 0 0 24px rgba(0, 188, 212, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Teacher button */
+.hero-cta .btn.secondary {
+  background: linear-gradient(90deg, rgba(255, 204, 0, 0.15), rgba(255, 204, 0, 0.05));
+  color: var(--text);
+  border: 1px solid rgba(255, 204, 0, 0.1);
+}
+
+.hero-cta .btn.secondary:hover {
+  box-shadow: 0 0 12px rgba(255, 204, 0, 0.5), 0 0 24px rgba(0, 188, 212, 0.3);
+  transform: translateY(-3px);
+}
+
+.hero img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 40px rgba(0, 188, 212, 0.2);
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.hero img:hover {
+  transform: scale(1.02);
+}
+
+/* ===================== Hero Features ===================== */
+.hero-features {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-top: 1.4rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.feat {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  color: var(--muted);
+  font-weight: 600;
+  background: var(--glass);
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  transition: all 0.25s ease;
+}
+
+.feat:hover {
+  background: linear-gradient(90deg, rgba(0, 188, 212, 0.08), rgba(255, 204, 0, 0.04));
+  transform: translateY(-3px);
+  color: var(--cyan);
+  box-shadow: 0 0 12px rgba(0, 188, 212, 0.3);
+}
+
+.feat i {
+  width: 18px;
+  text-align: center;
+}
+
+.feat[title="HTML"] i {
+  color: #e44d26;
+}
+.feat[title="CSS"] i {
+  color: #264de4;
+}
+.feat[title="PHP"] i {
+  color: #777bb3;
+}
+.feat[title="JavaScript"] i {
+  color: #f7df1e;
+}
+.feat[title="MySQL"] i {
+  color: #00758f;
+}
+.feat[title="C++"] i {
+  color: #00599c;
+}
+
+/* ===================== Tutor Skills ===================== */
+.tutor-skills {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.skill {
+  width: 32px;
+  height: 32px;
+  background: var(--glass);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.skill:hover {
+  background: linear-gradient(90deg, rgba(0, 188, 212, 0.08), rgba(255, 204, 0, 0.04));
+  color: var(--cyan);
+  transform: translateY(-3px);
+}
+
+.skill[title="HTML"] i {
+  color: #e44d26;
+}
+.skill[title="CSS"] i {
+  color: #264de4;
+}
+.skill[title="JavaScript"] i {
+  color: #f7df1e;
+}
+.skill[title="PHP"] i {
+  color: #777bb3;
+}
+.skill[title="MySQL"] i {
+  color: #00758f;
+}
+.skill[title="C++"] i {
+  color: #00599c;
+}
+
+/* ===================== Login Modal & Form ===================== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s var(--ease) both;
+}
+
+.login-panel {
+  background: rgba(20, 20, 25, 0.95);
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  max-width: 440px;
+  width: 90%;
+  text-align: left;
+  position: relative;
+  color: var(--text);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s var(--ease);
+}
+
+.login-panel .modal-head h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+  text-shadow: 0 0 6px var(--cyan), 0 0 12px rgba(0, 188, 212, 0.3);
+}
+
+.login-panel .modal-head .muted {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.login-panel .form label {
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 0.6rem;
+  color: var(--muted);
+}
+
+.login-panel .form input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  margin-top: 0.3rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: all 0.3s var(--ease);
+}
+
+.login-panel .form input:focus {
+  outline: none;
+  border-color: var(--cyan);
+  box-shadow: 0 0 10px var(--cyan), 0 0 20px rgba(0, 188, 212, 0.3);
+  background: rgba(0, 188, 212, 0.05);
+}
+
+.login-panel .form-row {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.login-panel .form-row .btn {
+  flex: 1;
+  justify-content: center;
+  font-weight: 700;
+  border-radius: var(--radius);
+  padding: 0.65rem 1rem;
+  transition: all 0.25s var(--ease);
+}
+
+.login-panel .form-row .btn.primary {
+  background: linear-gradient(90deg, rgba(0, 188, 212, 0.2), rgba(0, 188, 212, 0.05));
+  border: 1px solid rgba(0, 188, 212, 0.15);
+  color: var(--text);
+  box-shadow: 0 6px 30px rgba(0, 188, 212, 0.06);
+}
+
+.login-panel .form-row .btn.primary:hover {
+  box-shadow: 0 0 12px var(--cyan), 0 0 24px rgba(0, 188, 212, 0.3);
+  transform: translateY(-2px);
+}
+
+.login-panel .form-row .btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--muted);
+}
+
+.login-panel .form-row .btn.ghost:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  box-shadow: 0 0 12px var(--cyan), 0 0 24px rgba(0, 188, 212, 0.2);
+  transform: translateY(-2px);
+}
+
+.login-panel .modal-foot {
+  margin-top: 1.2rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.error {
+  color: #ff6b6b;
+  font-weight: 600;
+  min-height: 1.2rem;
+  margin-top: 0.5rem;
+  text-shadow: 0 0 4px rgba(255, 107, 107, 0.5);
+  animation: shake 0.5s ease both;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  font-size: 1.2rem;
+  color: var(--muted);
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background: rgba(0, 188, 212, 0.15);
+  color: var(--cyan);
+  transform: scale(1.1);
+  border-color: rgba(0, 188, 212, 0.3);
+}
+
+.modal[aria-hidden="false"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.26s var(--ease) both;
+}
+
+.modal[aria-hidden="true"] {
+  animation: fadeOut 0.26s var(--ease) both;
+}
+
+/* ===================== Buttons ===================== */
+.btn {
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 0.6rem;
+  align-items: center;
+  border: none;
+  transition: transform 220ms var(--ease), box-shadow 220ms var(--ease);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* ===================== Tutors Section ===================== */
+.tutors {
+  padding: 4rem 1rem;
+  background: radial-gradient(circle at bottom left, rgba(0, 188, 212, 0.02), transparent);
+}
+
+.tutors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.tutor-card {
+  flex: 1 1 260px;
+  max-width: 280px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+  position: relative;
+}
+
+.tutor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 80px rgba(0, 188, 212, 0.2);
+}
+
+.tutor-img {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 0.8rem auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--cyan);
+}
+
+.tutor-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.tutor-card:hover .tutor-img img {
+  transform: scale(1.05);
+}
+
+.role-badge {
+  display: inline-block;
+  margin: 0.3rem 0 0.8rem 0;
+  background: var(--cyan);
+  color: var(--bg);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 188, 212, 0.3);
+  max-width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tutor-card h4 {
+  margin: 0.2rem 0 0.2rem;
+  color: var(--text);
+}
+.tutor-card p.muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* ===================== Footer ===================== */
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  margin-top: 3rem;
+  padding: 1.4rem 0;
+  color: var(--muted);
+}
+
+.footer-inner {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ===================== Animations ===================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-8px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(8px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 980px) {
+  .title {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .tutors-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 7rem;
+  }
+  .title {
+    font-size: 1.7rem;
+  }
+  .hero-cta {
+    flex-direction: column;
+  }
+  .footer-inner {
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: flex-start;
+  }
+  .tutors-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .school-logo {
+    width: 40px;
+    height: 40px;
+  }
+  .logo {
+    font-size: 1.1rem;
+  }
+}
